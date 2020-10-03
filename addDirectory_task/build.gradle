@@ -1,0 +1,5 @@
+task makeDirectory{
+    doLast{
+        mkdir "newDirectory"
+    }
+}
