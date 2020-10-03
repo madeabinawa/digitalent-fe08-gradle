@@ -5,6 +5,7 @@ task makeDirectory{
 
 // then copy file
 task copyFile(type: Copy) {
+    // do makeDirectory first then copy index.html to archiveTo
     dependsOn.makeDirectory
     from "reports/index.html"
     into "archiveTo"
@@ -13,5 +14,13 @@ task copyFile(type: Copy) {
 task copyMultipleFile(type: Copy) {
     dependsOn.makeDirectory
     from "reports2/about.html","reports3/login.html"
+    into "archiveTo"
+}
+
+task copyFileByType(type: Copy) {
+    dependsOn.makeDirectory
+    from "reports"
+    // copy all file if format equals .txt
+    include "**/*.txt"
     into "archiveTo"
 }
