@@ -46,6 +46,7 @@ task deleteReports2File(type: Delete) {
 }
 
 task deleteFileByType(type: Delete){
+    // Mencari file .txt dengan menggunakan fungsi buil-in fileTree, lalu diikut nama direktori
     delete fileTree("reports").matching{
         include "**/*.txt"
     }
