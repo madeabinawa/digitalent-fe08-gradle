@@ -1,0 +1,20 @@
+task konfigurasi 
+
+konfigurasi{
+    doLast{
+        println "Konfigurasi 2"
+    }
+}
+konfigurasi{
+    doLast{
+        println "Konfigurasi 3"
+    }
+}
+konfigurasi{
+    doLast{
+        println "Konfigurasi 4"
+    }
+konfigurasi{
+        println "Konfigurasi awal"
+    }
+}
