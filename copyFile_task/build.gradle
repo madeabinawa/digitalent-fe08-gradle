@@ -24,3 +24,12 @@ task copyFileByType(type: Copy) {
     include "**/*.txt"
     into "archiveTo"
 }
+
+task copyReportsDir(type: Copy) {
+    // . is recent build.gradle path
+    from "."
+    // directory destination 
+    into "archiveTo"
+    // copying folder and it files
+    include 'reports/**'
+}
