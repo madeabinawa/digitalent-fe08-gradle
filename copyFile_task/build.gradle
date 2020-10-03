@@ -1,0 +1,11 @@
+// make directory first
+task makeDirectory{
+    mkdir "archiveTo"
+}
+
+// then copy file
+task copyFile(type: Copy) {
+    dependsOn.copyFile
+    from "reports/index.html"
+    into "archiveTo"
+}
