@@ -44,3 +44,9 @@ task moveSourceDir{
 task deleteReports2File(type: Delete) {
     delete "reports2"
 }
+
+task deleteFileByType(type: Delete){
+    delete fileTree("reports").matching{
+        include "**/*.txt"
+    }
+}
