@@ -1,0 +1,48 @@
+task setUpConnection{
+    println "Setting up database connection"
+}
+
+// syntax 1
+task connectToDatabase{
+    dependsOn 'setUpConnection'
+    println "Connect to Database"
+}
+
+// syntax 2
+task extractDatabase{
+    dependsOn connectToDatabase
+    println "Data successfully extracted"
+}
+
+// syntax 3
+task closeConnection{
+    dependsOn << extractDatabase
+    println "Connection closed"
+}
+
+// Contoh pemanggilan method dependsOn dengan cara yang berbeda
+task setUpConnection{
+    println "Setting up database connection"
+}
+
+// task connect database
+task connectToDatabase
+
+connectToDatabase.dependsOn.setUpConnection
+
+connectToDatabase{
+    println "Connecting to Database"
+}
+// end task connect database
+
+
+task extractDatabase{
+    dependsOn.connectToDatabase
+    println "Data Successfully Extracted"
+}
+
+task closeConnection(dependsOn:extractDatabase)
+
+closeConnection{
+    println "Closing Database connection.. "
+}
