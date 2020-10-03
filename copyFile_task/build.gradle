@@ -33,3 +33,10 @@ task copyReportsDir(type: Copy) {
     // copying folder and it files
     include 'reports/**'
 }
+
+task moveSourceDir{
+    doLast {
+        ant.move file: "sourceDir",
+        todir: "destinationDir"
+    }
+}
