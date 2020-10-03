@@ -40,3 +40,7 @@ task moveSourceDir{
         todir: "destinationDir"
     }
 }
+
+task deleteReports2File(type: Delete) {
+    delete "reports2"
+}
